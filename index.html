@@ -1,5 +1,8 @@
 
 <html>
+    <!--
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    -->
     <head>
         <style type="text/css">
             .upblue{
@@ -15,10 +18,163 @@
         <style>
             .redButton {
                 background-color: red;
+                -webkit-text-fill-color: black;
                 text-align: center;
-                font-size: 150px;
-                height: 200px;
-                width: 200px;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                cursor:pointer;
+                border: none;
+            }
+      </style>
+
+      <style>
+            .blueButton {
+                background-color: blue;
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                cursor:pointer;
+                border: none;
+            }
+      </style>
+
+      <style>
+            .orangeSquare {
+                background-color: rgb(248, 157, 38);
+                border: black;
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+            }
+      </style>
+
+      <style>
+            .greenSquare {
+                background-color: green;
+                border: black;
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+            }
+      </style>
+
+      <style>
+            .purpleSquare {
+                background-color: purple;
+                border: black;
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+            }
+      </style>
+
+      <style>
+            .bluePlatform {
+                background-color: rgb(97, 94, 94);
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                cursor:pointer;
+                border: 5px solid blue;
+            }
+      </style>
+
+      <style>
+            .redPlatform {
+                background-color: rgb(97, 94, 94);
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                cursor:pointer;
+                border: 5px solid red;
+            }
+      </style>
+
+      <style>
+            .yellowPlatform {
+                background-color: rgb(97, 94, 94);
+                -webkit-text-fill-color: black;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                cursor:pointer;
+                border: 5px solid yellow;
+            }
+      </style>
+
+      <style>
+            .whiteBorder {
+                background-color: rgb(153, 153, 153);
+                border: black;
+                height: 50px;
+                width: 600px;
+            }
+      </style>
+
+      <style>
+            .redBorder {
+                background-color: red;
+                border: black;
+                height: 50px;
+                width: 300px;
+            }
+      </style>
+
+      <style>
+            .blueBorder {
+                background-color: blue;
+                border: black;
+                height: 50px;
+                width: 300px;
+            }
+      </style>
+
+      <style>
+            .blueText {
+                background-color: white;
+                -webkit-text-fill-color: blue;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                border: none;
+            }
+      </style>
+
+      <style>
+            .redText {
+                background-color: white;
+                -webkit-text-fill-color: red;
+                text-align: center;
+                font-size: 50px;
+                height: 100px;
+                width: 100px;
+                border: none;
+            }
+      </style>
+
+      <style>
+            .spacer {
+                clear:left;
+                height:25px;
+                margin-top:0px;
+                margin-right:50px;
+                margin-bottom:0px;
+                margin-left:0px;
             }
       </style>
 
@@ -29,7 +185,386 @@
         <input type="image" name="button" value="Search" onclick="showUser()" class="button"/>
         <input type="submit" name="button" value="Search" onclick="showUser()" class="button"/>
         -->
-        <button class = "redButton">+1</button>
+
+        <!--Score tally-->
+        <button class = "redText" id = "redTotal">0</button>
+        <span class = "spacer"></span>
+        <span class = "spacer"></span>
+        <button class = "blueText" id = "blueTotal">0</button>
+
+        <br>
+
+        <!--1x zone-->
+        <input type = "button" class = "whiteBorder"/>
+
+        <br>
+
+        <button class = "redButton" onclick = "lROUp()">+1</button>
+        <button class = "redButton" onclick = "lRGUp()">+1</button>
+        <button class = "redButton" onclick = "lRPUp()">+1</button>
+
+        <span class = "spacer"></span>
+        <button class = "blueButton" onclick = "lBOUp()">+1</button>
+        <button class = "blueButton" onclick = "lBGUp()">+1</button>
+        <button class = "blueButton" onclick = "lBPUp()">+1</button>
+
+        <br>
+        
+        <button class = "orangeSquare" id = "lRO">0</button>
+        <button class = "greenSquare" id = "lRG">0</button>
+        <button class = "purpleSquare" id = "lRP">0</button>
+
+        <span class = "spacer"></span>
+        <button class = "orangeSquare" id = "lBO">0</button>
+        <button class = "greenSquare" id = "lBG">0</button>
+        <button class = "purpleSquare" id = "lBP">0</button>
+
+        <br>
+
+        <button class = "redButton" onclick = "lRODown()">-1</button>
+        <button class = "redButton" onclick = "lRGDown()">-1</button>
+        <button class = "redButton" onclick = "lRPDown()">-1</button>
+
+        <span class = "spacer"></span>
+        <button class = "blueButton" onclick = "lBODown()">-1</button>
+        <button class = "blueButton" onclick = "lBGDown()">-1</button>
+        <button class = "blueButton" onclick = "lBPDown()">-1</button>
+
+        <br>
+        <br>
+
+        <!--2x zone-->
+        <input type = "button" class = "redBorder"/>
+        <input type = "button" class = "blueBorder"/>
+
+        <br>
+
+        <button class = "redButton" onclick = "hROUp()">+1</button>
+        <button class = "redButton" onclick = "hRGUp()">+1</button>
+        <button class = "redButton" onclick = "hRPUp()">+1</button>
+
+        <span class = "spacer"></span>
+        <button class = "blueButton" onclick = "hBOUp()">+1</button>
+        <button class = "blueButton" onclick = "hBGUp()">+1</button>
+        <button class = "blueButton" onclick = "hBPUp()">+1</button>
+
+        <br>
+        
+        <button class = "orangeSquare" id = "hRO">0</button>
+        <button class = "greenSquare" id = "hRG">0</button>
+        <button class = "purpleSquare" id = "hRP">0</button>
+
+        <span class = "spacer"></span>
+        <button class = "orangeSquare" id = "hBO">0</button>
+        <button class = "greenSquare" id = "hBG">0</button>
+        <button class = "purpleSquare" id = "hBP">0</button>
+
+        <br>
+
+        <button class = "redButton" onclick = "hRODown()">-1</button>
+        <button class = "redButton" onclick = "hRGDown()">-1</button>
+        <button class = "redButton" onclick = "hRPDown()">-1</button>
+
+        <span class = "spacer"></span>
+        <button class = "blueButton" onclick = "hBODown()">-1</button>
+        <button class = "blueButton" onclick = "hBGDown()">-1</button>
+        <button class = "blueButton" onclick = "hBPDown()">-1</button>
+
+        <br>
+        <br>
+
+        <!--Platforms-->
+        <button class = "redPlatform" id = "redPlat" onclick = "redPlat()">0</button>
+        <button class = "yellowPlatform" id = "rNPlat" onclick = "redNeutralPlat()">0</button>
+
+        <span class = "spacer"></span>
+        <span class = "spacer"></span>
+        <span class = "spacer"></span>
+
+        <button class = "bluePlatform" id = "bluePlat" onclick = "bluePlat()">0</button>
+        <button class = "yellowPlatform" id = "bNPlat" onclick = "blueNeutralPlat()">0</button>
+
+        <script type="text/javascript">
+
+            function cubeTracker(numOrange, numGreen, numPurple) {
+                this.numOrange = numOrange;
+                this.numGreen = numGreen;
+                this.numPurple = numPurple;
+            }
+
+            lowRedCubes = new cubeTracker(0, 0, 0);
+            highRedCubes = new cubeTracker(0, 0, 0);
+
+            lowBlueCubes = new cubeTracker(0, 0, 0);
+            highBlueCubes = new cubeTracker(0, 0, 0);
+
+            var numOnRedPlat = 0;
+            var numRedOnNeut = 0;
+            var numOnBluePlat = 0;
+            var numBlueOnNeut = 0;
+
+
+
+            function updateCubeCounts() {
+                document.querySelector('#lRO').innerText = lowRedCubes.numOrange;
+                document.querySelector('#lRG').innerText = lowRedCubes.numGreen;
+                document.querySelector('#lRP').innerText = lowRedCubes.numPurple;
+
+                document.querySelector('#hRO').innerText = highRedCubes.numOrange;
+                document.querySelector('#hRG').innerText = highRedCubes.numGreen;
+                document.querySelector('#hRP').innerText = highRedCubes.numPurple;
+
+
+                document.querySelector('#lBO').innerText = lowBlueCubes.numOrange;
+                document.querySelector('#lBG').innerText = lowBlueCubes.numGreen;
+                document.querySelector('#lBP').innerText = lowBlueCubes.numPurple;
+
+                document.querySelector('#hBO').innerText = highBlueCubes.numOrange;
+                document.querySelector('#hBG').innerText = highBlueCubes.numGreen;
+                document.querySelector('#hBP').innerText = highBlueCubes.numPurple;
+
+                updateScore();
+            }
+
+            function updatePlatforms() {
+                document.querySelector('#redPlat').innerText = numOnRedPlat;
+                document.querySelector('#rNPlat').innerText = numRedOnNeut;
+
+                document.querySelector('#bluePlat').innerText = numOnBluePlat;
+                document.querySelector('#bNPlat').innerText = numBlueOnNeut;
+
+                updateScore();
+            }
+
+            function weightCubes(cube) {
+                var runningScore = 0;
+
+                runningScore += cube.numOrange * 1;
+                runningScore += cube.numGreen * 2;
+                runningScore += cube.numPurple * 3;
+
+                return runningScore;
+            }
+
+            function calculateScore(lowCube, highCube, numOnAlliancePlat, numOnNeutralPlat) {
+                var runningScore = 0;
+
+                runningScore += weightCubes(lowCube);
+                runningScore += (weightCubes(highCube) * 2);
+
+                runningScore += numOnAlliancePlat * 4;
+                runningScore += numOnNeutralPlat * 8;
+
+                return runningScore;
+            }
+
+            function updateRedScore() {
+                var score = calculateScore(lowRedCubes, highRedCubes, numOnRedPlat, numRedOnNeut);
+                document.querySelector('#redTotal').innerText = score;
+            }
+            
+            function updateBlueScore() {
+                var score = calculateScore(lowBlueCubes, highBlueCubes, numOnBluePlat, numBlueOnNeut);
+                document.querySelector('#blueTotal').innerText = score;
+            }
+
+            function updateScore() {
+                updateRedScore();
+                updateBlueScore();
+            }
+
+
+            //Low Red
+            function lROUp() {
+                lowRedCubes.numOrange ++;
+                updateCubeCounts();
+            }
+
+            function lRGUp() {
+                lowRedCubes.numGreen ++;
+                updateCubeCounts();
+            }
+
+            function lRPUp() {
+                lowRedCubes.numPurple ++;
+                updateCubeCounts();
+            }
+
+
+            function lRODown() {
+                if(lowRedCubes.numOrange > 0)
+                    lowRedCubes.numOrange --;
+                updateCubeCounts();
+            }
+
+            function lRGDown() {
+                if(lowRedCubes.numGreen > 0)
+                    lowRedCubes.numGreen --;
+                updateCubeCounts();
+            }
+
+            function lRPDown() {
+                if(lowRedCubes.numPurple > 0)
+                    lowRedCubes.numPurple --;
+                updateCubeCounts();
+            }
+
+
+
+            //High Red
+            function hROUp() {
+                highRedCubes.numOrange ++;
+                updateCubeCounts();
+            }
+
+            function hRGUp() {
+                highRedCubes.numGreen ++;
+                updateCubeCounts();
+            }
+
+            function hRPUp() {
+                highRedCubes.numPurple ++;
+                updateCubeCounts();
+            }
+
+
+            function hRODown() {
+                if(highRedCubes.numOrange > 0)
+                    highRedCubes.numOrange --;
+                updateCubeCounts();
+            }
+
+            function hRGDown() {
+                if(highRedCubes.numGreen > 0)
+                    highRedCubes.numGreen --;
+                updateCubeCounts();
+            }
+
+            function hRPDown() {
+                if(highRedCubes.numPurple > 0)
+                    highRedCubes.numPurple --;
+                updateCubeCounts();
+            }
+
+
+
+            //Low Blue
+            function lBOUp() {
+                lowBlueCubes.numOrange ++;
+                updateCubeCounts();
+            }
+
+            function lBGUp() {
+                lowBlueCubes.numGreen ++;
+                updateCubeCounts();
+            }
+
+            function lBPUp() {
+                lowBlueCubes.numPurple ++;
+                updateCubeCounts();
+            }
+
+
+            function lBODown() {
+                if(lowBlueCubes.numOrange > 0)
+                    lowBlueCubes.numOrange --;
+                updateCubeCounts();
+            }
+
+            function lBGDown() {
+                if(lowBlueCubes.numGreen > 0)
+                    lowBlueCubes.numGreen --;
+                updateCubeCounts();
+            }
+
+            function lBPDown() {
+                if(lowBlueCubes.numPurple > 0)
+                    lowBlueCubes.numPurple --;
+                updateCubeCounts();
+            }
+
+
+
+            //High Blue
+            function hBOUp() {
+                highBlueCubes.numOrange ++;
+                updateCubeCounts();
+            }
+
+            function hBGUp() {
+                highBlueCubes.numGreen ++;
+                updateCubeCounts();
+            }
+
+            function hBPUp() {
+                highBlueCubes.numPurple ++;
+                updateCubeCounts();
+            }
+
+
+            function hBODown() {
+                if(highBlueCubes.numOrange > 0)
+                    highBlueCubes.numOrange --;
+                updateCubeCounts();
+            }
+
+            function hBGDown() {
+                if(highBlueCubes.numGreen > 0)
+                    highBlueCubes.numGreen --;
+                updateCubeCounts();
+            }
+
+            function hBPDown() {
+                if(highBlueCubes.numPurple > 0)
+                    highBlueCubes.numPurple --;
+                updateCubeCounts();
+            }
+
+
+
+
+            //Platforms
+            function redPlat() {
+                if(numOnRedPlat < 2)
+                    numOnRedPlat ++;
+                else
+                    numOnRedPlat = 0;
+
+                updatePlatforms();
+            }
+
+            function redNeutralPlat() {
+                if(numRedOnNeut < 2)
+                    numRedOnNeut ++;
+                else
+                    numRedOnNeut = 0;
+
+                updatePlatforms();
+            }
+
+
+            function bluePlat() {
+                if(numOnBluePlat < 2)
+                    numOnBluePlat ++;
+                else
+                    numOnBluePlat = 0;
+
+                updatePlatforms();
+            }
+
+            function blueNeutralPlat() {
+                if(numBlueOnNeut < 2)
+                    numBlueOnNeut ++;
+                else
+                    numBlueOnNeut = 0;
+
+                updatePlatforms();
+            }
+
+
+
+        </script>
+
     </body>
 </html>
 
