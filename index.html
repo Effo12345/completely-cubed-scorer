@@ -1,5 +1,7 @@
 
 <html>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     -->
@@ -199,7 +201,7 @@
 
         <br>
 
-        <button class = "redButton" onclick = "lROUp()">+1</button>
+        <button class = "redButton" onmousedown = "lROUp()">+1</button>
         <button class = "redButton" onclick = "lRGUp()">+1</button>
         <button class = "redButton" onclick = "lRPUp()">+1</button>
 
@@ -283,6 +285,10 @@
 
         <button class = "bluePlatform" id = "bluePlat" onclick = "bluePlat()">0</button>
         <button class = "yellowPlatform" id = "bNPlat" onclick = "blueNeutralPlat()">0</button>
+
+        <br>
+
+        <button onclick="reset()">Reset</button>
 
         <script type="text/javascript">
 
@@ -371,6 +377,18 @@
             function updateScore() {
                 updateRedScore();
                 updateBlueScore();
+            }
+
+            function reset() {
+                lowRedCubes = new cubeTracker(0, 0, 0);
+                highRedCubes = new cubeTracker(0, 0, 0);
+                lowBlueCubes = new cubeTracker(0, 0, 0);
+                highBlueCubes = new cubeTracker(0, 0, 0);
+
+                numOnRedPlat = numRedOnNeut = numOnBluePlat = numBlueOnNeut = 0;
+
+                updateCubeCounts();
+                updatePlatforms();
             }
 
 
